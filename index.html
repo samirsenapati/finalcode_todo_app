@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard - FinalCode</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+  </div>
+  
+  <div class="container">
+    <header class="header">
+      <h1>🌤️ Weather Dashboard</h1>
+      <p class="subtitle">Real-time weather information</p>
+    </header>
+    
+    <form class="search-form" id="search-form">
+      <input 
+        type="text" 
+        id="city-input" 
+        placeholder="Search for a city..." 
+        autocomplete="off"
+        required
+      >
+      <button type="submit" id="search-btn">
+        <span class="btn-icon">🔍</span>
+        <span class="btn-text">Search</span>
+      </button>
+    </form>
+    
+    <button class="location-btn" id="location-btn">
+      📍 Use My Location
+    </button>
+    
+    <!-- Loading State -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Fetching weather data...</p>
+    </div>
+    
+    <!-- Error State -->
+    <div class="error-state" id="error-state">
+      <div class="error-icon">⚠️</div>
+      <p id="error-message">City not found. Please try again.</p>
+    </div>
+    
+    <!-- Weather Content -->
+    <div class="weather-content" id="weather-content">
+      <!-- Current Weather -->
+      <section class="current-weather" id="current-weather">
+        <div class="weather-main">
+          <div class="weather-icon" id="weather-icon">☀️</div>
+          <div class="temperature">
+            <span class="temp-value" id="temp-value">--</span>
+            <span class="temp-unit">°C</span>
+          </div>
+        </div>
+        <div class="weather-info">
+          <h2 class="city-name" id="city-name">--</h2>
+          <p class="weather-desc" id="weather-desc">--</p>
+          <p class="date-time" id="date-time">--</p>
+        </div>
+      </section>
+      
+      <!-- Weather Details -->
+      <section class="weather-details">
+        <div class="detail-card">
+          <div class="detail-icon">💨</div>
+          <div class="detail-info">
+            <span class="detail-value" id="wind-speed">--</span>
+            <span class="detail-label">Wind Speed</span>
+          </div>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon">💧</div>
+          <div class="detail-info">
+            <span class="detail-value" id="humidity">--</span>
+            <span class="detail-label">Humidity</span>
+          </div>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon">🌡️</div>
+          <div class="detail-info">
+            <span class="detail-value" id="feels-like">--</span>
+            <span class="detail-label">Feels Like</span>
+          </div>
+        </div>
+        <div class="detail-card">
+          <div class="detail-icon">☁️</div>
+          <div class="detail-info">
+            <span class="detail-value" id="cloud-cover">--</span>
+            <span class="detail-label">Cloud Cover</span>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Hourly Forecast -->
+      <section class="forecast-section">
+        <h3 class="section-title">24-Hour Forecast</h3>
+        <div class="hourly-forecast" id="hourly-forecast">
+          <!-- Hourly items will be inserted here -->
+        </div>
+      </section>
+      
+      <!-- 7-Day Forecast -->
+      <section class="forecast-section">
+        <h3 class="section-title">7-Day Forecast</h3>
+        <div class="daily-forecast" id="daily-forecast">
+          <!-- Daily items will be inserted here -->
+        </div>
+      </section>
+    </div>
+    
+    <!-- Initial State -->
+    <div class="initial-state" id="initial-state">
+      <div class="initial-icon">🌍</div>
+      <p>Search for a city or use your location to get started</p>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
